@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import RecipesList from "./RecipesList";
 
 class App extends Component {
