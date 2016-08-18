@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import RecipesList from "./RecipesList";
+import AddRecipe from './AddRecipe';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.setState(window.sessionStorage);
+    this.state = window.sessionStorage;
   }
   render() {
     return (
-      <div className="App">
-        <button className="btn btn-add">+</button>
-        <RecipesList />
+      <div className="app">
+        <button className="btn btn-add">add</button>
+        <AddRecipe />
+        <RecipesList
+          recipes={this.state}
+
+        />
       </div>
     );
   }

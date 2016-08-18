@@ -1,0 +1,17 @@
+// global styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.btn {
+  border-radius: 8px;
+}
+
+// import component styles
+@import 'app';
