@@ -8,7 +8,7 @@ class App extends Component {
     let recipes = [];
     for (let i=0; i<localStorage.length; i++) {
       let key = localStorage.key(i);
-      recipes[i] = localStorage.getItem(key).split(',');
+      recipes[i] = [ key, localStorage.getItem(key).split(',')];
     }
     this.state = {recipes: recipes};
     this.getRecipes = this.getRecipes.bind(this);
@@ -18,13 +18,14 @@ class App extends Component {
     let recipes = [];
     for (let i=0; i<localStorage.length; i++) {
       let key = localStorage.key(i);
-      recipes[i] = localStorage.getItem(key).split(',');
+      recipes[i] = [ key, localStorage.getItem(key).split(',')];
     }
     this.setState({recipes: recipes});
+
   }
 
-  addRecipe(recipe) {
-    localStorage.setItem(recipe[0], recipe[1]);
+  addRecipe(recipeName, ingredients) {
+    localStorage.setItem(recipeName, ingredients);
     this.getRecipes();
 
   }

@@ -12,9 +12,9 @@ export default (props) => {
 
       onClick={() =>  props.onToggle(props.num)}
     >
-      <h4>{props.recipe}</h4>
+      <h4>{props.recipe[0]}</h4>
       <RecipeDetail
-        recipeName={props.recipe}
+        recipe={props.recipe}
         edit={props.edit}
         remove={props.remove}
         getrecipes={props.getRecipes}

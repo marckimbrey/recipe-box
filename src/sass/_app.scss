@@ -24,8 +24,10 @@
   padding: 50px 0;
   max-width: 940px;
   margin: 0 auto;
+  z-index: -1;
   :nth-child(1n) {
-    visibility: hidden;
+    display: none;
+
   }
 
 
@@ -37,9 +39,10 @@
   height: 400px;
   width: 100%;
   overflow: hidden;
+  z-index: 1;
   transition: height 1s;
   :nth-child(1n) {
-    visibility: visible;
+    display: block;
   }
 
 }

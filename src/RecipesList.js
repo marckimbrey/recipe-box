@@ -19,7 +19,7 @@ export default class extends Component {
     const recipesList = this.props.recipes.map((recipe, index) => {
       return (
         <Recipe
-        recipe={recipe[0]}
+        recipe={recipe}
         getRecipes={this.getRecipes}
         edit={this.edit}
         remove={this.remove}
