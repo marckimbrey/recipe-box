@@ -10,14 +10,51 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  z-index: 3;
 }
 .add-form {
-  display: none;
+
+  position: absolute;
+  top: 0;
+  right:0;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height 1s;
+  padding: 50px 0;
+  max-width: 940px;
+  margin: 0 auto;
+  :nth-child(1n) {
+    visibility: hidden;
+  }
+
+
+
+
 }
+.add-form-active {
+  background: blue;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  transition: height 1s;
+  :nth-child(1n) {
+    visibility: visible;
+  }
+
+}
+
 
 .recipe {
 
   .detail-view {
     display: none;
+  }
+
+}
+.recipe-selected {
+
+  .detail-view {
+    display: block;
   }
 }

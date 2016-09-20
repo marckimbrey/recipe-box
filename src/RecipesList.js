@@ -5,7 +5,10 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = {selected: ''};
-    this.recipes = ["mac & cheese", "pizza", "toast"];
+    this.recipes = this.props.recipes;
+    this.remove = this.props.remove;
+    this.edit = this.props.edit;
+    this.getRecipes = this.props.getRecipes;
     this.onChildSelect = this.onChildSelect.bind(this);
   }
   onChildSelect(id) {
@@ -13,10 +16,13 @@ export default class extends Component {
   }
 
   render () {
-    const recipesList = this.recipes.map((recipe, index) => {
+    const recipesList = this.props.recipes.map((recipe, index) => {
       return (
         <Recipe
-        recipe={recipe}
+        recipe={recipe[0]}
+        getRecipes={this.getRecipes}
+        edit={this.edit}
+        remove={this.remove}
         onToggle={this.onChildSelect}
         selected={this.state.selected === index  ? true: false}
         key={index}
