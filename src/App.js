@@ -8,7 +8,9 @@ class App extends Component {
     let recipes = [];
     for (let i=0; i<localStorage.length; i++) {
       let key = localStorage.key(i);
-      recipes[i] = [ key, localStorage.getItem(key).split(',')];
+      let ingredients = localStorage.getItem(key).split(',');
+      let image = ingredients.pop();
+      recipes[i] = { name: key, ingredients: ingredients , image: image };
     }
     this.state = {recipes: recipes};
     this.getRecipes = this.getRecipes.bind(this);
@@ -18,7 +20,9 @@ class App extends Component {
     let recipes = [];
     for (let i=0; i<localStorage.length; i++) {
       let key = localStorage.key(i);
-      recipes[i] = [ key, localStorage.getItem(key).split(',')];
+      let ingredients = localStorage.getItem(key).split(',');
+      let image = ingredients.pop();
+      recipes[i] = { name: key, ingredients: ingredients , image: image };
     }
     this.setState({recipes: recipes});
 
@@ -44,6 +48,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <h1>Recipe Box</h1>
         <button
           className="btn btn-add"
           onClick={()=>{
@@ -58,7 +63,6 @@ class App extends Component {
           recipes={this.state.recipes}
           remove={this.deleteRecipe.bind(this)}
           edit={this.editRecipe.bind(this)}
-          getRecipes={this.props.getRecipes}
         />
       </div>
     );

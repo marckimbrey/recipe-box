@@ -8,7 +8,6 @@ export default class extends Component {
     this.recipes = this.props.recipes;
     this.remove = this.props.remove;
     this.edit = this.props.edit;
-    this.getRecipes = this.props.getRecipes;
     this.onChildSelect = this.onChildSelect.bind(this);
   }
   onChildSelect(id) {
@@ -20,7 +19,6 @@ export default class extends Component {
       return (
         <Recipe
         recipe={recipe}
-        getRecipes={this.getRecipes}
         edit={this.edit}
         remove={this.remove}
         onToggle={this.onChildSelect}
@@ -31,7 +29,7 @@ export default class extends Component {
     });
     return (
 
-      <ul>
+      <ul className="recipe-list" >
         {recipesList}
       </ul>
     )

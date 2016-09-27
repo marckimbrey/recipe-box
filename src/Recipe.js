@@ -12,7 +12,8 @@ export default (props) => {
 
       onClick={() =>  props.onToggle(props.num)}
     >
-      <h4>{props.recipe[0]}</h4>
+      <img src={props.recipe.image} alt={props.recipe.name} />
+      <h4>{props.recipe.name}</h4>
       <RecipeDetail
         recipe={props.recipe}
         edit={props.edit}

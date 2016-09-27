@@ -12,6 +12,17 @@ li {
 .btn {
   border-radius: 8px;
 }
+input,
+textarea {
+  width: 80%;
+  margin: 0  auto 1%;
+}
+label {
+  margin-left: 10%;
+}
+img {
+  width:100%;
+}
 
 // import component styles
 @import 'app';
