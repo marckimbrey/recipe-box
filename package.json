@@ -47,8 +47,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "react": "^15.2.1",
+    "react": "^15.3.2",
     "react-dom": "^15.2.1",
+    "react-fa": "^4.1.2",
     "salvattore": "^1.0.9"
   },
   "scripts": {

@@ -1,12 +1,22 @@
-$background-color: #666;
-$background-color-light: lighten($background-color, 10%);
+
 
 .app {
   max-width: 940px;
   width: 100%;
+  min-height: 80vh;
   margin: 0 auto;
   background: $background-color;
   position: relative;
+  font-size: 1.1em;
+  @media(min-width: $large) {
+    max-width: 1080px;
+  }
+
+}
+
+h1 {
+  padding: 10px 0  40px 20px;
+  margin: 0;
 }
 
 .btn-add {
@@ -14,56 +24,26 @@ $background-color-light: lighten($background-color, 10%);
   top: 20px;
   right: 20px;
   z-index: 3;
+  font-size: 1.5em;
 }
-.add-form {
 
-  position: absolute;
-  top: 0;
-  right:0;
-  height: 0;
-  width: 100%;
-  overflow: hidden;
-  transition: height 1s;
-  padding: 50px 0;
-  max-width: 940px;
-  margin: 0 auto;
-  z-index: -1;
-  :nth-child(1n) {
-    display: none;
-
-  }
-
-
-
-
-}
-.add-form-active {
-  position: absolute;
-  background: blue;
-  opacity: .8;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
-  transition: height 1s;
-  :nth-child(1n) {
-    display: block;
-  }
-
-}
 
 .recipe-list {
 
   padding: 0 10px;
   transform: translateX(0);
-  @media(min-width: 450px) {
+  @media(min-width: $small) {
     padding: 0 15px;
     column-count: 2;
     column-gap: 10px;
   }
-  @media(min-width: 640px) {
+  @media(min-width: $medium) {
     column-count: 3;
     column-gap: 15px;
+    box-shadow: 0px 10px 15px #333;
+  }
+  @media(min-width: $large) {
+      //column-count: 4;
   }
 }
 
@@ -90,4 +70,9 @@ $background-color-light: lighten($background-color, 10%);
   .detail-view {
     display: block;
   }
+}
+
+.btn-edit,
+.btn-delete {
+  margin: 1px 2px 5px 5px;
 }

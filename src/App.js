@@ -53,9 +53,11 @@ class App extends Component {
           className="btn btn-add"
           onClick={()=>{
             const addForm = document.getElementsByClassName("add-form");
+            const recipeName = document.getElementById("recipe-name");
             addForm[0].classList.toggle("add-form-active");
+            recipeName.readOnly = false;
           }}
-        >add</button>
+        >Add</button>
         <AddRecipe
           addRecipe={this.addRecipe.bind(this)}
         />

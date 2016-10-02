@@ -1,8 +1,64 @@
+// Sass variables
+$background-color: #666;
+$background-color-light: lighten($background-color, 10%);
+$button-color: yellow;
+
+$small: 440px;
+$medium: 700px;
+$large: 1440px;
+
+$title-font: 'Lobster', sans-serif;
+
 // global styles
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+h1 {
+  @media(min-width: $small) {
+    font-size: 2em;
+  }
+  @media(min-width: $medium) {
+    font-size: 2.5em;
+  }
+  @media(min-width: $large) {
+    font-size: 3em;
+  }
+}
+h4 {
+  @media(min-width: $small) {
+    font-size: 1.5em;
+  }
+  @media(min-width: $medium) {
+    font-size: 1.75em;
+  }
+  @media(min-width: $large) {
+    font-size: 2em;
+  }
+}
+p,
+label,
+button,
+input {
+  @media(min-width: $small) {
+    font-size: 1.1em;
+  }
+  @media(min-width: $medium) {
+    font-size: 1.2em;
+  }
+  @media(min-width: $large) {
+    font-size: 1.3em;
+  }
+}
+h1,
+h4 {
+  font-family: $title-font;
+  letter-spacing: .05em;
+
+}
+h4 {
+  padding: 0 2%;
 }
 
 li {
@@ -11,6 +67,9 @@ li {
 
 .btn {
   border-radius: 8px;
+  background: $button-color;
+  border-color: $button-color;
+
 }
 input,
 textarea {
@@ -26,3 +85,4 @@ img {
 
 // import component styles
 @import 'app';
+@import 'form';
