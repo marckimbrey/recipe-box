@@ -13,6 +13,8 @@ export default (props) => {
       </textarea>
       <label >image url: </label>
       <input id="recipe-image" type="text" />
+      <label >recipe link: </label>
+      <input id="recipe-link" type="text" />
       <input
         className="btn btn-submit"
         type="submit"
@@ -22,14 +24,16 @@ export default (props) => {
           const recipeName = document.getElementById("recipe-name");
           const ingredients = document.getElementById("ingredients");
           const recipeImage = document.getElementById("recipe-image");
+          const recipeLink = document.getElementById("recipe-link");
           props.addRecipe(
             recipeName.value,
-            ingredients.value.concat("," ,recipeImage.value)
+            `${ingredients.value},${recipeLink.value} ,${recipeImage.value}`
           );
           recipeName.readOnly = false;
           recipeName.value = '';
           ingredients.value = '';
           recipeImage.value = '';
+          recipeLink.value= '';
 
         }}
       />

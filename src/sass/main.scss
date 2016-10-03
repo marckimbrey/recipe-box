@@ -40,7 +40,8 @@ h4 {
 p,
 label,
 button,
-input {
+input,
+textarea {
   @media(min-width: $small) {
     font-size: 1.1em;
   }
