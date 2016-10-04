@@ -58,6 +58,10 @@ class App extends Component {
             const recipeName = document.getElementById("recipe-name");
             addForm[0].classList.toggle("add-form-active");
             recipeName.readOnly = false;
+            recipeName.value = '';
+            document.getElementById("ingredients").value = '';
+            document.getElementById("recipe-image").value = '';
+            document.getElementById("recipe-link").value = '';
           }}
         >Add</button>
         <AddRecipe
