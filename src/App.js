@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import RecipesList from "./RecipesList";
 import AddRecipe from './AddRecipe';
+import defaultRecipes from './defaultRecipes';
 
 class App extends Component {
   constructor(props) {
     super(props);
+
+    if (localStorage.length === 0) {
+      defaultRecipes.forEach((recipe)=> {
+        localStorage.setItem(recipe[0], recipe[1]);
+      });
+    }
     let recipes = [];
     for (let i=0; i<localStorage.length; i++) {
       let key = localStorage.key(i);
@@ -51,6 +58,7 @@ class App extends Component {
     return (
       <div className="app">
         <h1>Recipe Box</h1>
+        <p>code for this project can be found at <a href="https://github.com/marckimbrey/recipe-box">https://github.com/marckimbrey/recipe-box</a></p>
         <button
           className="btn btn-add"
           onClick={()=>{
